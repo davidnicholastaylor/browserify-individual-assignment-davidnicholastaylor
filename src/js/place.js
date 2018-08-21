@@ -8,8 +8,8 @@ const placeComponent = Object.create(null, {
             </article>
             <section class="placeDescriptionBody">
                 ${place.description}
-                <button class="deletePlace" id="delete--${place.id}>Delete</button>
             </section>
+                <button class="deletePlace" id="delete--${place.id}">Delete</button>
             </div>`
         }
     }
