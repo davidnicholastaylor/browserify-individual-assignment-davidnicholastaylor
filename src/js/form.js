@@ -4,7 +4,7 @@ const placesForm = Object.create(null, {
             document.querySelector("#restaurantInput").value = ""
             document.querySelector("#cityInput").value = ""
             document.querySelector("#stateInput").value = ""
-            document.querySelector("#locationDescription").value = ""
+            document.querySelector("#placeDescription").value = ""
         }
     },
     formBuilder: {

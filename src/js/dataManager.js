@@ -1,19 +1,20 @@
 const dataManager = Object.create(null, {
     savePlace: {
-        value: (entry) => {
+        value: (place) => {
             return fetch("http://localhost:8088/places", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(entry)
+                body: JSON.stringify(place)
             })
                 .then(response => response.json())
         }
     },
-    getAllPlaces: {
+    getPlaces: {
         value: () => {
-            return fetch("http://localhost:8088/places?_order=desc&_sort=date").then(r => r.json())
+            return fetch("http://localhost:8088/places")
+            .then(r => r.json())
         }
     },
     deletePlace: {
