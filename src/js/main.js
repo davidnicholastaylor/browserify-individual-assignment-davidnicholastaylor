@@ -18,29 +18,29 @@ function showPlaces() {
                 state: document.querySelector("#stateInput").value,       
                 description: document.querySelector("#placeDescription").value          
             }
-            document.querySelector("#placesList").innerHTML = ""
             dataManager.savePlace(newPlace)
             .then(() => {
                 dataManager.getPlaces()
                 .then((places) => {
+                    document.querySelector("#placeComponent").innerHTML = ""
                     places.forEach((location) => {
                         document.querySelector("#placeComponent").innerHTML += placeComponent.placeCard(location)
                     })
                 })
             })
             .then(() => 
-            placesForm.clearForm(),
+            placesForm.clearForm()
         )
     }
+    // document.querySelector("#addPlaceForm").addEventListener("click", (e) => {
+    //     if (e.target.className === "deletePlace") {
+    //         let placeId = e.target.id.split("--")[1];
+    //         DataManager.removeEvent(placeId).then(() => {
+    //             e.target.parentElement.remove();
+    //         });
+    //     }
+    // }
 })
-//         document.querySelector("#placeCard").addEventListener("click", (e) => {
-//             if (e.target.className === "deletePlace") {
-//                 let placeSplit = e.target.id.split("--")[1];
-//                 dataManager.deletePlace(placeSplit).then(() => {
-//                     e.target.parentElement.remove();
-//                 });
-//             }
-// })
 }
 
 showPlaces()
